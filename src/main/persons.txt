@@ -1,1 +1,0 @@
-Person{name='John', address='sadasdas', cash=99999, education='sa'}Person{name='AAaa', address='sadasdas', cash=99999, education='sa'}
