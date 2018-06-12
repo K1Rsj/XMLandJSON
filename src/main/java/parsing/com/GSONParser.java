@@ -11,7 +11,7 @@ public class GSONParser {
     public void runProcess() {
         try {
             JsonArray jsonArray = getJsonElements(new File("src/main/resources/JSON input.json"));
-            List<JsonElement> resultList = getSpecificJsons(jsonArray);
+            List<JsonElement> resultList = getSpecificJson(jsonArray);
             writeJsonIntoFile(resultList);
             readJsonFromFile(new File("src/main/resources/JSON output"));
 
@@ -20,13 +20,13 @@ public class GSONParser {
         }
     }
 
-    private JsonArray getJsonElements(File input) throws FileNotFoundException {
+    JsonArray getJsonElements(File input) throws FileNotFoundException {
         JsonParser parser = new JsonParser();
         JsonElement jsonElement = parser.parse(new FileReader(input));
         return jsonElement.getAsJsonArray();
     }
 
-    private List<JsonElement> getSpecificJsons(JsonArray jsonArray) {
+    List<JsonElement> getSpecificJson(JsonArray jsonArray) {
         List<JsonElement> resultList = new ArrayList<>();
         for (int i = 0; i < jsonArray.size(); i++) {
             JsonElement element = jsonArray.get(i);
